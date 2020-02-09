@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+
+<h1>Hello {{firstname}}, {{lastname}}</h1>
+    <div class="container">
+    <div class="jumbotron">  
+    <h1> The Loan management</h1>
+    <form action="/predict" method="POST">
+      <div class="form-group">
+      <label>First name:
+      <input  class="form-control" type="text" name="firstname"></label>
+       </div>
+      
+       <div class="form-group">
+       <label>Last name:
+      <input class="form-control" type="text" name="lastname"></label>
+      </div>
+       
+      <div class="form-group">
+            <label>Gender:
+           <input  type="radio" name="gender">Male
+           <input  type="radio" name="gender">Female
+          </label>
+           </div>
+
+      <div class="form-group">
+      <label>Loan Amount:
+        <input class="form-control" type="number" name="loanamount"></label>
+        
+        <div class="form-group">
+       <label>Income Level:
+        <input class="form-control" type="number" name="incomelevel"></label>
+        </div>
+       
+        <div class="form-group">
+       <label>University staff:
+        <input class="form-control" list = "unistaff" name = "unistaffs">
+        <datalist id ="unistaff">
+            <option value= "1">
+            <option value= "0">
+        </datalist></label>
+        </div>
+
+        <div class="form-group">
+                <label>Union Member:
+                 <select class="form-control" name = "member">
+                     <option value= "1">YES</option>
+                     <option value= "0">NO</option>
+                     </select></label>
+                 </div>
+
+
+                 
+                 
+       <div class="form-group">
+        <label>Guarantor:
+                     
+       <select class="form-control" name = "guarans">
+                    <option value= "1">Valid</option>
+                    <option value= "0">Invalid</option>
+                    </select></label>
+                </div></label>
+        </div>
+
+        <div class="form-group">
+            <label>Married:
+            <select name="married">
+                <option disabled selected>Marital Status</option>
+                <option value= "1">YES</option>
+                <option value= "0">NO</option>
+             </select>   
+            </label>
+            </div>
+
+
+        <div class="form-group">
+        <label>Guarantor Contribution:
+        <input class="form-control" list = "guarancon" name = "guarancons">
+        <datalist id ="guarancon">
+            <option value= "1">
+            <option value= "0">
+        </datalist></label>
+        </div>
+        
+        <div class="form-group">
+        <label>Pledge:
+        <input class="form-control" list = "guaran" name = "pledge">
+        <datalist id ="guaran">
+            <option value= "1">
+            <option value= "0">
+        </datalist></label>
+        </div>
+
+        <div class="form-group">
+       <label>Credit history:
+        <input class="form-control" type="number" name="points" step="1">
+        </div>
+        <div class="form-group">
+          <input  type="submit" value="Submit" class="btn btn-primary"></label>
+        </div>
+    </form>
+    </div>
+    </div>
+
+{% endblock %}
+
+<!-- Gender	Married	Guarantor	Guarantor_Contribution	University_Staff	Income_Level	LoanAmount	Credit_History	Union_member	pledge -->
