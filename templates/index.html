@@ -20,32 +20,32 @@
        
       <div class="form-group">
             <label>Gender:
-           <input  type="radio" name="gender">Male
-           <input  type="radio" name="gender">Female
+           <input  type="radio" name="gender" required>Male
+           <input  type="radio" name="gender" required>Female
           </label>
            </div>
 
       <div class="form-group">
       <label>Loan Amount:
-        <input class="form-control" type="number" name="loanamount"></label>
+        <input class="form-control" type="number" name="loanamount" required></label>
         
         <div class="form-group">
        <label>Income Level:
-        <input class="form-control" type="number" name="incomelevel"></label>
+        <input class="form-control" type="number" name="incomelevel" required></label>
         </div>
        
         <div class="form-group">
        <label>University staff:
-        <input class="form-control" list = "unistaff" name = "unistaffs">
+        <input class="form-control" list = "unistaff" name = "unistaffs" required>
         <datalist id ="unistaff">
-            <option value= "1">
-            <option value= "0">
+            <option value= "Yes">
+            <option value= "No">
         </datalist></label>
         </div>
 
         <div class="form-group">
                 <label>Union Member:
-                 <select class="form-control" name = "member">
+                 <select class="form-control" name = "member" required>
                      <option value= "1">YES</option>
                      <option value= "0">NO</option>
                      </select></label>
@@ -57,7 +57,7 @@
        <div class="form-group">
         <label>Guarantor:
                      
-       <select class="form-control" name = "guarans">
+       <select class="form-control" name = "guarans" required>
                     <option value= "1">Valid</option>
                     <option value= "0">Invalid</option>
                     </select></label>
@@ -66,7 +66,7 @@
 
         <div class="form-group">
             <label>Married:
-            <select name="married">
+            <select name="married" required>
                 <option disabled selected>Marital Status</option>
                 <option value= "1">YES</option>
                 <option value= "0">NO</option>
@@ -77,11 +77,12 @@
 
         <div class="form-group">
         <label>Guarantor Contribution:
-        <input class="form-control" list = "guarancon" name = "guarancons">
-        <datalist id ="guarancon">
-            <option value= "1">
-            <option value= "0">
-        </datalist></label>
+        <select class="form-control" list = "guarancon" name = "guarancons" required>
+            <option disabled selected>Contribution</option>
+            <option value= "1">Ok</option>
+            <option value= "0">nil</option>
+         </select>
+        </label>
         </div>
         
         <div class="form-group">
@@ -95,7 +96,7 @@
 
         <div class="form-group">
        <label>Credit history:
-        <input class="form-control" type="number" name="points" step="1">
+        <input class="form-control" type="number" name="points"  min="0" step="1">
         </div>
         <div class="form-group">
           <input  type="submit" value="Submit" class="btn btn-primary"></label>
@@ -106,4 +107,3 @@
 
 {% endblock %}
 
-<!-- Gender	Married	Guarantor	Guarantor_Contribution	University_Staff	Income_Level	LoanAmount	Credit_History	Union_member	pledge -->
